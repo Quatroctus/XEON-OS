@@ -1,0 +1,41 @@
+ELF_MAGIC = 0x464C457F
+ELF_PROG_LOAD = 0x1
+
+.set Elf.e_magic,       0
+.set Elf.e_elf,         4
+.set Elf.e_type,        16
+.set Elf.e_machine,     18
+.set Elf.e_version,     20
+.set Elf.e_entry,       24
+.set Elf.e_phoff,       28
+.set Elf.e_shoff,       32
+.set Elf.e_flags,       36
+.set Elf.e_ehsize,      40
+.set Elf.e_phentsize,   42
+.set Elf.e_phnum,       44
+.set Elf.e_shentsize,   46
+.set Elf.e_shnum,       48
+.set Elf.shstrndx,      50
+.set sizeof.Elf,        52
+
+.set Proghdr.p_type,    0
+.set Proghdr.p_offset,  4
+.set Proghdr.p_va,      8
+.set Proghdr.p_pa,      12
+.set Proghdr.p_filesz,  16
+.set Proghdr.p_memsz,   20
+.set Proghdr.p_flags,   24
+.set Proghdr.p_align,   28
+.set sizeof.Proghdr,    32
+
+.set Secthdr.sh_name,       0
+.set Secthdr.sh_type,       4
+.set Secthdr.sh_flags,      8
+.set Secthdr.sh_addr,       12
+.set Secthdr.sh_offset,     16
+.set Secthdr.sh_size,       20
+.set Secthdr.sh_link,       24
+.set Secthdr.sh_info,       28
+.set Secthdr.sh_addralign,  32
+.set Secthdr.sh_entsize,    36
+.set sizeof.Secthdr,        40
