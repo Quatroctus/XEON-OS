@@ -100,7 +100,6 @@ outoffset:
 
     mov ecx, 128
     mov dx, 0x1F0
-    # cld # Shouldn't be necessary because we never do a std
     repnz insd
     pop eax
     pop edi
@@ -158,13 +157,14 @@ bootmain:
 segments:
     cmp ebx, ebp
     jae endsegments
+
     mov edi, [ebx + Proghdr.p_pa]
     mov edx, [ebx + Proghdr.p_memsz]
     mov eax, [ebx + Proghdr.p_offset]
     call readseg
 
-    mov eax, [ebx + Proghdr.p_memsz]
-    mov ecx, [ebx + Proghdr.p_filesz]
+    mov eax, dword ptr [ebx + Proghdr.p_filesz]
+    mov ecx, dword ptr [ebx + Proghdr.p_memsz]
     add edi, eax
     sub ecx, eax
     xor eax, eax
